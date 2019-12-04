@@ -131,7 +131,13 @@ function createArticle(article) {
 
   // Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
   expandButton.addEventListener('click', () => {
-    expandButton.classList.toggle('article-open');
+    expandButton.parentElement.classList.toggle('article-open');
+    if(expandButton.parentElement.classList.contains('article-open')) {
+      expandButton.textContent = '\u25b2';
+    }
+    else {
+      expandButton.textContent = '\u25bc';
+    }
   });
 
   // create article
