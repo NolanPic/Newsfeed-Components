@@ -45,6 +45,9 @@ function createMenu(items) {
   // add menu items to menu
   menu.appendChild(ul);
 
+  // make sure menu is hidden to start
+  menu.style.display = 'none';
+
   // Step 5: return the menu component.
   return menu;
 }
@@ -59,6 +62,7 @@ const menuBtn = document.querySelector('.menu-button');
 
  // Step 4: add a click event listener to the menu button. When clicked it should toggle the class 'menu--open' on the menu (your div with a 'menu' class).
 menuBtn.addEventListener('click', () => {
+  menu.style.display = 'block';
   menu.classList.toggle('menu--open');
 });
 
