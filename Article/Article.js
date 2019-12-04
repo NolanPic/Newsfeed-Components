@@ -85,6 +85,33 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Reacting to Reactivity in Reactive Development with React',
+    date: 'Dec 1st, 2018',
+    firstParagraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, quod. Non doloremque dicta minima, animi repudiandae eligendi? Ea officia necessitatibus, quos explicabo, illo numquam omnis nostrum mollitia, corrupti assumenda itaque?`,
+
+    secondParagraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, quod. Non doloremque dicta minima, animi repudiandae eligendi? Ea officia necessitatibus, quos explicabo, illo numquam omnis nostrum mollitia, corrupti assumenda itaque?`,
+
+    thirdParagraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, quod. Non doloremque dicta minima, animi repudiandae eligendi? Ea officia necessitatibus, quos explicabo, illo numquam omnis nostrum mollitia, corrupti assumenda itaque?`
+  },
+  {
+    title: 'Reaaaaaaaact',
+    date: 'Nov 1st, 2018',
+    firstParagraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, quod. Non doloremque dicta minima, animi repudiandae eligendi? Ea officia necessitatibus, quos explicabo, illo numquam omnis nostrum mollitia, corrupti assumenda itaque?`,
+
+    secondParagraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, quod. Non doloremque dicta minima, animi repudiandae eligendi? Ea officia necessitatibus, quos explicabo, illo numquam omnis nostrum mollitia, corrupti assumenda itaque?`,
+
+    thirdParagraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, quod. Non doloremque dicta minima, animi repudiandae eligendi? Ea officia necessitatibus, quos explicabo, illo numquam omnis nostrum mollitia, corrupti assumenda itaque?`
+  },
+  {
+    title: 'Did someone say DHTML lol?',
+    date: 'Oct 1st, 2018',
+    firstParagraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, quod. Non doloremque dicta minima, animi repudiandae eligendi? Ea officia necessitatibus, quos explicabo, illo numquam omnis nostrum mollitia, corrupti assumenda itaque?`,
+
+    secondParagraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, quod. Non doloremque dicta minima, animi repudiandae eligendi? Ea officia necessitatibus, quos explicabo, illo numquam omnis nostrum mollitia, corrupti assumenda itaque?`,
+
+    thirdParagraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, quod. Non doloremque dicta minima, animi repudiandae eligendi? Ea officia necessitatibus, quos explicabo, illo numquam omnis nostrum mollitia, corrupti assumenda itaque?`
   }
 ];
 
