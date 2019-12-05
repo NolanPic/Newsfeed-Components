@@ -85,6 +85,33 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Reacting to Reactivity in Reactive Development with React',
+    date: 'Dec 1st, 2018',
+    firstParagraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, quod. Non doloremque dicta minima, animi repudiandae eligendi? Ea officia necessitatibus, quos explicabo, illo numquam omnis nostrum mollitia, corrupti assumenda itaque?`,
+
+    secondParagraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, quod. Non doloremque dicta minima, animi repudiandae eligendi? Ea officia necessitatibus, quos explicabo, illo numquam omnis nostrum mollitia, corrupti assumenda itaque?`,
+
+    thirdParagraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, quod. Non doloremque dicta minima, animi repudiandae eligendi? Ea officia necessitatibus, quos explicabo, illo numquam omnis nostrum mollitia, corrupti assumenda itaque?`
+  },
+  {
+    title: 'Reaaaaaaaact',
+    date: 'Nov 1st, 2018',
+    firstParagraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, quod. Non doloremque dicta minima, animi repudiandae eligendi? Ea officia necessitatibus, quos explicabo, illo numquam omnis nostrum mollitia, corrupti assumenda itaque?`,
+
+    secondParagraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, quod. Non doloremque dicta minima, animi repudiandae eligendi? Ea officia necessitatibus, quos explicabo, illo numquam omnis nostrum mollitia, corrupti assumenda itaque?`,
+
+    thirdParagraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, quod. Non doloremque dicta minima, animi repudiandae eligendi? Ea officia necessitatibus, quos explicabo, illo numquam omnis nostrum mollitia, corrupti assumenda itaque?`
+  },
+  {
+    title: 'Did someone say DHTML lol?',
+    date: 'Oct 1st, 2018',
+    firstParagraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, quod. Non doloremque dicta minima, animi repudiandae eligendi? Ea officia necessitatibus, quos explicabo, illo numquam omnis nostrum mollitia, corrupti assumenda itaque?`,
+
+    secondParagraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, quod. Non doloremque dicta minima, animi repudiandae eligendi? Ea officia necessitatibus, quos explicabo, illo numquam omnis nostrum mollitia, corrupti assumenda itaque?`,
+
+    thirdParagraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, quod. Non doloremque dicta minima, animi repudiandae eligendi? Ea officia necessitatibus, quos explicabo, illo numquam omnis nostrum mollitia, corrupti assumenda itaque?`
   }
 ];
 
@@ -102,13 +129,76 @@ const data = [
   Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
-
-  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
-
-  Step 3: return the entire component.
-
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
-
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-
 */
+
+function createArticle(article) {
+  const { title, date, firstParagraph, secondParagraph, thirdParagraph } = article;
+  
+  // create heading
+  const heading = document.createElement('h2');
+  heading.textContent = title;
+
+  // create date
+  const dateEl = document.createElement('p');
+  dateEl.textContent = date;
+  dateEl.classList.add('date');
+
+  // paragraphs
+  const paragraphs = [firstParagraph, secondParagraph, thirdParagraph].map(text => {
+    const p = document.createElement('p');
+    p.textContent = text;
+    
+    return p;
+  });
+
+  // expand button
+  const expandButton = document.createElement('span');
+  expandButton.classList.add('expandButton');
+  expandButton.textContent = '\u25bc';
+
+  // Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+  expandButton.addEventListener('click', () => {
+    expandButton.parentElement.classList.toggle('article-open');
+    if(expandButton.parentElement.classList.contains('article-open')) {
+      expandButton.textContent = '\u25b2';
+    }
+    else {
+      expandButton.textContent = '\u25bc';
+    }
+  });
+
+  // create article
+  const articleEl = document.createElement('div');
+  articleEl.classList.add('article');
+
+  // add all children in an array in order to iterate through,
+  // adding them to parent article
+  const children = [heading, dateEl, paragraphs, expandButton];
+
+  children.forEach(el => {
+
+    if(Array.isArray(el)) {
+      // this is an array of elements, e.g. paragraphs
+      el.forEach(p => articleEl.appendChild(p));
+    }
+    else {
+      // all other elements
+      articleEl.appendChild(el);
+    }
+  });
+
+  // Step 3: return the entire component.
+  return articleEl;
+}
+
+
+// Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+const articleElements = data.map(a => createArticle(a));
+const articleParent = document.querySelector('.articles');
+
+// add articles to DOM
+articleElements.forEach(a => articleParent.appendChild(a));
+
+// Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+
+ 
